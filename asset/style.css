@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+    width: 100%;
+    height: 100vh;
+}
+
+.container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#toast { 
+    position:fixed;
+    top: 32px;
+    right: 32px;
+    /* animation: showToast 2s ease-in-out */
+    /* , hideToast 1s 3s ease-in; */
+}
+/*hideToast 1s(time thực hiện) 3s(delay) ease-in forwards(không trở lại điểm cuối) */
+
+/* animation hiện toast */
+@keyframes showToast {
+    from {
+        transform: translateX(420px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* animation ẩn toast */
+@keyframes hideToast {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 12px 12px;
+    min-width: 380px;
+    max-width: 420px;
+    /* border-left: solid 4px; */
+    border-radius: 12px;
+    margin-bottom: 12px;
+    transition: all 3s linear;
+}
+
+.toast-body {
+    flex-grow: 1;
+}
+
+.toast-icon,
+.toast-body,
+.toast-close {
+    margin-right: 12px;
+}
+
+.toast-title {
+    line-height: 1.6;
+    margin-top: 4px;
+}
+
+.toast-close {
+    cursor: pointer;
+}
+
+.toast-icon {
+    font-size: 24px;
+    color: #fff;
+}
+
+.success {
+    background-color: #4ba155;
+}
+
+.error {
+    background-color: #c84243;
+}
+
+.warning {
+    background-color: #e0954b;
+}
+
+.control {
+    margin-top: 500px;
+}
+
+.control .btn {
+    margin-right: 20px;
+    min-width: 100px;
+    padding: 12px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: #000;
+}
+
+.btn-success {
+    background-color: #4ba155;
+}
+
+.btn-warning {
+    background-color: #e0954b;
+}
+
+.btn-error {
+    background-color: #c84243;
+}
+
+.control .btn:hover {
+    opacity: 0.8;
+}
